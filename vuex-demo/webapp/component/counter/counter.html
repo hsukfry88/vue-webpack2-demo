@@ -1,0 +1,11 @@
+<div id="count">
+	<div class="example">{{ msg }}</div>
+	<div>
+		<button @click="addevent">{{add}}</button>
+		<span>{{$store.state.count}}</span>
+		<button @click="reducevent">{{reduce}}</button>
+		<button @click="incrementAsync">异步事件测试</button>
+		<span>evenOrOdd:{{evenOrOdd}}</span>
+	</div>
+</div>
+
