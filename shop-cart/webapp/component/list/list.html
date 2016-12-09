@@ -1,0 +1,11 @@
+<div>
+	<ul class="product-list">
+			<li  v-for="p in product">
+				<p class="title">{{p.title}}</p>
+				<p class="intro">{{p.intro}}</p>
+				<p class="price">{{p.price}}</p>
+				<p class="number">剩余:{{p.inventory}}</p>
+			<button>加入购物车</button>
+			</li>
+	</ul>
+</div>
