@@ -26,6 +26,11 @@ const mutations = {
 		product
 	}) {
 		state.all = product;
+	},
+	[types.ADD_CART](state, {
+		id
+	}) {
+		state.all.find(p => p.id === id).inventory--;
 	}
 }
 

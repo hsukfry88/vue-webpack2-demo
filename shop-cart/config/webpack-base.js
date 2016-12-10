@@ -29,6 +29,9 @@ const baseConfig = {
                     }),
                 }
             }
+        }, {
+            test: /\.(png|jpg)$/,
+            loader: 'css-img-loader?limit=7&name=../assets/img/[name].[ext]&outputPath=img/'
         }]
     },
     _resolve: {

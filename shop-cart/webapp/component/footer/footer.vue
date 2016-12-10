@@ -5,7 +5,30 @@ footer{
     line-height: 56px;
     text-align: center;
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#f9f9f9),to(#e0e0e0));
-    color: #00a5e0;
+    
+}
+footer a{color: #00a5e0;}
+footer .corner-wp{
+  position: relative;
+  display: inline-block;
+}
+footer .corner{
+    position: absolute;
+    height: 20px;
+    line-height: -20px;
+    top:10px;
+    right:-20px;
+    display: inline-block;
+    text-align: center;
+    background: #f74c31;
+    color: #fff;
+    font-size: 11px;
+    height: 16px;
+    line-height: 16px;
+    -webkit-border-radius: 8px;
+    padding: 0 6px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
 }
 footer ul{
   list-style-type: none;
@@ -19,17 +42,23 @@ footer li{
 <template>
 	<footer>
       <ul>
-        <li v-for="item in footer">
-          {{item.name}}
-        </li>
+        <li><router-link to="/foo" class="router-link-active"><div  class="corner-wp"><span>商品列表</span></div></router-link></li>
+        <li><router-link to="/bar" class="router-link-active"><div class="corner-wp"><span>我的购物车</span> <span class="corner">{{cartProLength}}</span></div></router-link></li>
       </ul> 
   </footer>
 </template>
 <script>
+import {mapGetters} from 'vuex';
+import shopCar from '../cart/cart.vue';
 export default {
+  name:'footer',
+  computed:mapGetters(['cartProLength']),
   data () {
     return {
-      footer:[{"name":"首页","name":"我的购物车"},{"name":"产品列表页"}]
+      footer:[{"name":"我的购物车",
+               "icon":"true"},
+               {"name":"产品列表页"}
+             ]
     }
   }
 }

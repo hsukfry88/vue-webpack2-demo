@@ -5,7 +5,13 @@
 				<p class="intro">{{p.intro}}</p>
 				<p class="price">{{p.price}}</p>
 				<p class="number">剩余:{{p.inventory}}</p>
-			<button>加入购物车</button>
+				<div v-if="p.inventory > 0">
+				  <button @click="addShopCar(p)">加入购物车</button>
+				</div>
+				<div v-else>
+				  <button  class="disable">商品售罄</button>
+				</div>
+			
 			</li>
 	</ul>
 </div>

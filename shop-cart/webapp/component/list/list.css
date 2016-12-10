@@ -32,6 +32,10 @@ button{height: 30px;
     color: #fff;
     border-color: #f43d30
 }
+.product-list .disable{
+    color: #ccc;
+    background: #e9ebec;
+}
 .product-list .title{
     color: #666;
 }

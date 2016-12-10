@@ -6,8 +6,13 @@ import {
 export default {
 	name: 'product-list',
 	computed: mapGetters({
-		product: 'allProducts'
+		product: 'allProducts',
+
 	}),
+	methods: mapActions([
+		'addShopCar', // 映射 this.increment() 为 this.$store.dispatch('increment')
+		'cartProducts'
+	]),
 	created() {
 		this.$store.dispatch('getAllProducts')
 	}
